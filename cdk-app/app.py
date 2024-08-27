@@ -12,7 +12,7 @@ app = cdk.App()
 
 default_env = {
     "account": os.getenv("ACCOUNT"),
-    "region": os.getenv("REGION_NAME", "us-west-2")
+    "region": os.getenv("REGION_NAME", "ap-northeast-2")
 };
 
 redshift_admin_user = "<admin_user>"
