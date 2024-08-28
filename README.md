@@ -1,9 +1,9 @@
 ## Stored Procedure Conversion Tool from Oracle to Amazon Redshift
-1. [Introduction]()
-2. [Solution Overview]()
-3. [How to Run]()
-4. [Reference]()
-
+1. Introduction
+2. Solution Overview
+3. How to Run
+4. Reference
+</br>
 
 ## Introduction
 This repository provides a deployable Stored Procedure(SP) Conversion Tool from Oracle to Redshift, leverating the power of Large Language Models(LLMs) backed by Amazon Bedrock.
@@ -30,20 +30,8 @@ With a goal to lift the above huddles, this repository offers a stored procedure
 <!--[Image] Architecture Diagram-->
 ![Architecture Diagram](./images/Image.jpg)
 
-This repository has two deployable CDK stacks:
-- RedshiftServerlessStack
-- SagemakerNotebookStack
 
-RedshiftServerlessStack will deploy Amazon Redshift Serverless's Workgroup and Namegroup. 
-The task of Redshift Serverless is to receive a converted Amazon Redshift stored procedure and check whether it has syntax error like the above diagram.
-
-SagemakerNotebookStack will deploy Amazon SageMaker notebook instance, providing JupyterLab environment where you will run a notebook file.
-
-A notebook file is responsible for the above converting logic from 1 to 3.
-
-
-
-## How to Use
+## How to Run
 #### Step 0. Prerequsites
 Before moving to the next step, please ensure you have the following:
 - AWS Account
@@ -61,7 +49,7 @@ Open your terminal, and run the following commands in the specified order:
 ```
 git clone oracle-to-redshift-stored-procedure-converter-cdk-app
 
-cd oracle-to-redshift-stored-procedure-converter-cdk-app/cdk-app
+cd oracle-to-redshift-stored-procedure-converter-cdk-app
 
 # [Mac Only] Create virtual environment
 python -m venv .venv
@@ -73,8 +61,8 @@ python -m pip install -r requirements.txt
 ```
 
 
-#### 2. Set up the parameters
-Open ```cdk-app/app.py``` file and replace ```<admin_user>``` and ```<admin_user_password>``` that are used for authentications in Amazon Redshift.</br>
+#### Step 2. Set up the parameters
+Open ```./cdk-app/app.py``` file and replace ```<admin_user>``` and ```<admin_user_password>``` that are used for authentications in Amazon Redshift.</br>
 The ```<admin_user_password>``` must meet the following constraints:
 - It must be 8 to 64 characters in length.
 - It must contain at least one uppercase letter, one lowercase letter, and one number.
@@ -85,14 +73,14 @@ redshift_admin_user = "<admin_user>"
 redshift_admin_user_password = "<admin_user_password>"
 ```
 
-#### 3. CDK Bootstrap
+#### Step 3. CDK Bootstrap
 Set up the resources required by CDK to deploy into the AWS account. </br>
 This step is only required if you have not used CDK in the deployment account and region. On your terminal, run the following command:
 ```
 cdk bootstrap
 ```
 
-#### 4. Deploy CDK Stacks
+#### Step 4. Deploy CDK Stacks
 Synthesize and deploy CDK stacks to your AWS Account.
 
 On your terminal, run the following commands in the specifed order:
@@ -107,14 +95,14 @@ If CDK stacks are successfully deployed, you can ses the messages like the below
 ![CDK Deploy Result](./images/cdk_deploy_result.png
 )
 
-#### 5. Open a notebook file in SageMaker notebook
+#### Step 5. Open a notebook file in SageMaker notebook
 
 Go to AWS Console and search <strong>SageMaker</strong>.</br>
 On the left pane in Amazon SageMaker console, click <strong>Notebooks</strong> under Applications and IDEs and click <strong>Open jupyterLab</strong>.
 ![SageMaker Console](./images/sagemaker_console.png)
 
 
-#### 6. Run a notebook
+#### Step 6. Run a notebook
 Open ```main.ipynb``` file and run cells sequentially.</br>
 Check for three Markdown blocks with red text that require your attention before you run a followed code cell.
 ![Warning](./images/warning(1).png)
