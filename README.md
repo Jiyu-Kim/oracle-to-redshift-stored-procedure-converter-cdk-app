@@ -30,6 +30,18 @@ With a goal to lift the above huddles, this repository offers a stored procedure
 <!--[Image] Architecture Diagram-->
 ![Architecture Diagram](./images/Image.jpg)
 
+This repository has two deployable CDK stacks:
+- RedshiftServerlessStack
+- SagemakerNotebookStack
+
+RedshiftServerlessStack will deploy Amazon Redshift Serverless's Workgroup and Namegroup. 
+The task of Redshift Serverless is to receive a converted Amazon Redshift stored procedure and check whether it has syntax error like the above diagram.
+
+SagemakerNotebookStack will deploy Amazon SageMaker notebook instance, providing JupyterLab environment where you will run a notebook file.
+
+A notebook file is responsible for the above converting logic from 1 to 3.
+
+
 
 ## How to Use
 #### Step 0. Prerequsites
