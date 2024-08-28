@@ -28,7 +28,7 @@ With a goal to lift the above huddles, this repository offers a stored procedure
 
 #### Proposed Solution
 <!--[Image] Architecture Diagram-->
-![Architecture Diagram](./images/Image.jpg)
+![Architecture Diagram](../images/Image.jpg)
 
 
 ## How to Use
@@ -92,21 +92,21 @@ cdk synth --all
 cdk deploy --all --require-approval never
 ```
 If CDK stacks are successfully deployed, you can ses the messages like the below on your terminal.
-![CDK Deploy Result](./images/cdk_deploy_result.png
+![CDK Deploy Result](../images/cdk_deploy_result.png
 )
 
 #### 5. Open a notebook file in SageMaker notebook
 
 Go to AWS Console and search <strong>SageMaker</strong>.</br>
 On the left pane in Amazon SageMaker console, click <strong>Notebooks</strong> under Applications and IDEs and click <strong>Open jupyterLab</strong>.
-![SageMaker Console](./images/sagemaker_console.png)
+![SageMaker Console](../images/sagemaker_console.png)
 
 
 #### 6. Run a notebook
 Open ```main.ipynb``` file and run cells sequentially.</br>
 Check for three Markdown blocks with red text that require your attention before you run a followed code cell.
-![Warning](./images/warning(1).png)
-![Warning](./images/warning(2).png)
+![Warning](../images/warning(1).png)
+![Warning](../images/warning(2).png)
 
 ## Reference
 - [Build a robust text-to-SQL solution generating complex queries, self-correcting, and querying diverse data sources](https://aws.amazon.com/blogs/machine-learning/build-a-robust-text-to-sql-solution-generating-complex-queries-self-correcting-and-querying-diverse-data-sources/)

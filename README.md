@@ -3,7 +3,7 @@
 2. [Solution Overview]()
 3. [How to Run]()
 4. [Reference]()
-</br>
+
 
 ## Introduction
 This repository provides a deployable Stored Procedure(SP) Conversion Tool from Oracle to Redshift, leverating the power of Large Language Models(LLMs) backed by Amazon Bedrock.
