@@ -15,8 +15,8 @@ default_env = {
     "region": os.getenv("REGION_NAME", "ap-northeast-2")
 };
 
-redshift_admin_user = "<admin_user>"
-redshift_admin_user_password = "<admin_user_password>"
+redshift_admin_user = "admin"
+redshift_admin_user_password = "Pjy707099@"
 
 redshift_credentials = {
     "admin_username": redshift_admin_user,
@@ -24,6 +24,6 @@ redshift_credentials = {
 }
 
 RedshiftServerlessStack(app, "RedshiftServerlessStack", redshift_credentials=redshift_credentials, env=default_env)
-SagemakerNotebookStack(app, "SagemakerNotebookStack")
+SagemakerNotebookStack(app, "SagemakerNotebookStack", env=default_env)
 
 app.synth()
